@@ -48,90 +48,90 @@ body {
     margin-bottom: 15px;
 }
 
-@media screen and (max-width: 576px) {
-
-    .main-info,
-    .contact_info_container {
-        flex-direction: column;
-    }
-
-    .contact_info_container {
-        align-items: center;
-    }
-
-    .contact-info__block:not(:last-child) {
-        margin-bottom: 20px;
-    }
-
-    .experiences {
-        margin-right: 0;
-    }
+.contact-info__header,
+.contact-info__sub-header {
+    text-align: center;
 }
 
-.contact-info__header,
-  .contact-info__sub-header {
-      text-align: center;
-  }
+.contact-info__header {
+    color: var(--primary-text-color);
+    margin-bottom: 15px;
+    text-decoration-color: var(--text-decoration-color);
+    text-decoration-line: underline;
+}
 
-  .contact-info__header {
-      color: var(--primary-text-color);
-      margin-bottom: 15px;
-      text-decoration-color: var(--text-decoration-color);
-      text-decoration-line: underline;
-  }
+.contact-info__sub-header {
+    color: var(--secondary-text-color);
+    margin-bottom: 30px;
+}
 
-  .contact-info__sub-header {
-      color: var(--secondary-text-color);
-      margin-bottom: 30px;
-  }
+.contact-info__block {
+    width: 35%;
+}
 
-  .contact-info__block {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-  }
+.contact-info__block:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
 
-  .contact-info__block--center {
-      justify-content: center;
-  }
+.contact-info__block--avatar {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
 
-  .contact-info__item {
-      color: var(--secondary-text-color);
-      text-decoration: none;
-      display: flex;
-      justify-content: start;
-  }
+.block-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--text-decoration-color);
+    background-image: url("./assets/avatar.jpg");
+    background-size: cover;
 
-  .contact-info__item:not(:last-child) {
-      margin-bottom: 20px;
-  }
+}
 
-  .contact-info__item-icon-wrapper {
-      margin-right: 10px;
-      width: 20px;
-      display: flex;
-      justify-content: center;
-  }
+.contact-info__item {
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    display: flex;
+    justify-content: start;
+}
 
-  .contact-info__item-icon path {
-      fill: var(--icon-color);
-  }
+.contact-info__item:not(:last-child) {
+    margin-bottom: 20px;
+}
 
-  .contact-info__item-icon {
-      height: 1.1428rem;
-      vertical-align: text-bottom;
-  }
+.contact-info__item-icon-wrapper {
+    margin-right: 10px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+}
 
-  .contact-info__avatar {
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border: 3px solid;
-      border-color: var(--text-decoration-color);
-  }
+.contact-info__item-icon-wrapper svg path {
+    fill: var(--secondary-text-color);
+}
 
-  .intro {
+.contact-info__item-icon path {
+    fill: var(--icon-color);
+}
+
+.contact-info__item-icon {
+    height: 1.1428rem;
+    vertical-align: text-bottom;
+}
+
+.contact-info__avatar {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid;
+    border-color: var(--text-decoration-color);
+}
+
+.intro {
     display: flex;
     justify-content: start;
 }
@@ -163,9 +163,10 @@ body {
     margin-bottom: 15px;
 }
 
-.skills__text {
+.skills__block {
     color: var(--secondary-text-color);
-    text-align: justify;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .experiences {
@@ -260,4 +261,52 @@ body {
 
 .additional-info__languages-item {
     color: var(--secondary-text-color);
+}
+
+@media screen and (max-width: 576px) {
+    .main-info,
+    .contact_info_container {
+        flex-direction: column;
+    }
+
+    .contact_info_container {
+        align-items: center;
+    }
+    
+    .contact-info__block--avatar {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .contact-info__block {
+        align-items: center;
+        width: fit-content;
+    }
+
+    .contact-info__block:last-child {
+        align-items: flex-start;
+    }
+
+    .experiences {
+        margin-right: 0;
+    }
+}
+
+/* Custom styles */
+
+.chip-skill {
+    display: block;
+    width: fit-content;
+    border-radius: 15px;
+    background-color: var(--border-color);
+    padding: 4px 14px;
+    margin-bottom: 12px;
+}
+
+.chip-skill:not(:last-child) {
+    margin-right: 12px;
+}
+
+.chip-skill:hover {
+    transform: scale(1.05);
 }
